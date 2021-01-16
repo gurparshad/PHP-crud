@@ -84,10 +84,11 @@
 
 <script>
     function checkForBlank(){
-        var change = document.getElementsByClassName("typeError");
-        for (var i = 0; i < change.length; i++) {
+        let change = document.getElementsByClassName("typeError");
+        for (let i = 0; i < change.length; i++) {
         change[i].innerHTML = "";
         }
+        document.getElementById("selectError").innerHTML = "";
         let pt = document.getElementById("product_type");
         let selectedValue = pt.options[pt.selectedIndex].value;
         let typeError = false;
@@ -112,7 +113,6 @@
         }
 
         if(selectedValue == "Type Switcher"){
-            document.getElementById('product_type').style.borderColor = "red";
             document.getElementById('selectError').innerText = "Please select a Product Type";
             typeSelectError = true;
         }
